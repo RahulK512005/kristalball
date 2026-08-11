@@ -1,0 +1,12 @@
+{
+  "name": "kristallball-monorepo",
+  "version": "1.0.0",
+  "description": "Kristallball Enterprise Military Asset Management System",
+  "scripts": {
+    "backend": "cd backend && npm start",
+    "backend:dev": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "seed": "cd backend && npm run seed",
+    "start": "node scripts/start-all.js"
+  }
+}
