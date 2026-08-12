@@ -32,7 +32,12 @@ function loadDb() {
 }
 
 function saveDb() {
-  fs.writeFileSync(dbFilePath, JSON.stringify(inMemoryData, null, 2), 'utf8');
+  try {
+    fs.writeFileSync(dbFilePath, JSON.stringify(inMemoryData, null, 2), 'utf8');
+  } catch (err) {
+    // In serverless environments like Vercel, filesystem is read-only.
+    // In-memory data updates safely for request duration.
+  }
 }
 
 loadDb();
